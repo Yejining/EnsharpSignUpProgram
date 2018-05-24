@@ -15,27 +15,29 @@
             <ColumnDefinition Width="30"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="80"/>
-            <RowDefinition Height="10"/>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="15"/>
             <RowDefinition Height="*"/>
-            <RowDefinition Height="10"/>
+            <RowDefinition Height="25"/>
             <RowDefinition Height="*"/>
-            <RowDefinition Height="10"/>
+            <RowDefinition Height="15"/>
             <RowDefinition Height="4*"/>
-            <RowDefinition Height="10"/>
+            <RowDefinition Height="15"/>
             <RowDefinition Height="*"/>
-            <RowDefinition Height="10"/>
+            <RowDefinition Height="15"/>
             <RowDefinition Height="2*"/>
-            <RowDefinition Height="10"/>
+            <RowDefinition Height="15"/>
             <RowDefinition Height="*"/>
-            <RowDefinition Height="10"/>
+            <RowDefinition Height="15"/>
             <RowDefinition Height="*"/>
-            <RowDefinition Height="10"/>
+            <RowDefinition Height="15"/>
             <RowDefinition Height="50"/>
         </Grid.RowDefinitions>
-        <TextBlock Name="name" Grid.Row="2" Grid.Column="1" TextWrapping="Wrap" Background="Lime"/>
-        <TextBlock Name="id" Grid.Row="2" Grid.Column="3" TextWrapping="Wrap" Background="Lime"/>
-        <TextBlock Name="password" Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="3" TextWrapping="Wrap" Background="Lime"/>
+        <TextBox Name="nameBox" Tag="0" Text="이름" Foreground="Gray" Grid.Row="2" Grid.Column="1" TextWrapping="Wrap" Padding="5,0,5,0" VerticalContentAlignment="Center" GotFocus="name_GotFocus" LostFocus="name_LostFocus"/>
+        <Label Name="warning" Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="3"/>
+        <TextBox Name="idBox" Tag="1" Text="ID" Foreground="Gray" Grid.Row="2" Grid.Column="3" TextWrapping="Wrap" Padding="5,0,5,0" VerticalContentAlignment="Center" Visibility="Hidden" GotFocus="name_GotFocus"/>
+        <TextBox Name="passwordBox" Text="암호" Foreground="Gray" Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="3" TextWrapping="Wrap" Padding="5,0,5,0" VerticalContentAlignment="Center" Visibility="Hidden"/>
         
+
     </Grid>
 </UserControl>

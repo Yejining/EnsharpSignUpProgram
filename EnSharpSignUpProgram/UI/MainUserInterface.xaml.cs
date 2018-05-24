@@ -12,6 +12,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+using EnSharpSignUpProgram.Data;
+
 namespace EnSharpSignUpProgram.UI
 {
     /// <summary>
@@ -26,6 +28,8 @@ namespace EnSharpSignUpProgram.UI
         public MainUserInterface()
         {
             InitializeComponent();
+
+            Database.ConnectToMySQL();
 
             // MainUserInterface 클래스와 연결
             MainGrid.Children.Add(titleBar);

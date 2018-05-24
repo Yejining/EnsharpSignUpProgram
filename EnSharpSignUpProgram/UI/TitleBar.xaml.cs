@@ -12,6 +12,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+using EnSharpSignUpProgram.Data;
+
 namespace EnSharpSignUpProgram.UI
 {
     /// <summary>
@@ -61,6 +63,7 @@ namespace EnSharpSignUpProgram.UI
         // 닫기버튼
         private void close_MouseLeftButtonUp(object sender, System.Windows.Input.MouseEventArgs e)
         {
+            Database.CloseConnectMySQL();
             mainWindow.Close();
         }
     }
