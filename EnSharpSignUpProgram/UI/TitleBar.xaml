@@ -1,0 +1,20 @@
+﻿<UserControl x:Class="EnSharpSignUpProgram.UI.TitleBar"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:EnSharpSignUpProgram.UI"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="60"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="50"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Label Content="Yejining" HorizontalAlignment="Right" VerticalAlignment="Center" Grid.Column="0" MouseLeftButtonDown="titlebar_MouseLeftButtonDown"/>
+        <Rectangle Name="titlebar" Stroke="Black" Fill="Transparent" Grid.Column="1" StrokeThickness="0" MouseLeftButtonDown="titlebar_MouseLeftButtonDown"/>
+        <Label Name="close" Content="×" FontSize="15" FontWeight="Light" Grid.Column="2" BorderThickness="0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Background="Transparent"
+               MouseEnter="close_MouseEnter" MouseLeave="close_MouseLeave" MouseLeftButtonDown="close_MouseLeftButtonDown" MouseLeftButtonUp="close_MouseLeftButtonUp"/>
+    </Grid>
+</UserControl>

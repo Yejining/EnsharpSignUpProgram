@@ -12,6 +12,9 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+using EnSharpSignUpProgram.UI;
+using EnSharpSignUpProgram.API;
+
 namespace EnSharpSignUpProgram
 {
     /// <summary>
@@ -19,9 +22,16 @@ namespace EnSharpSignUpProgram
     /// </summary>
     public partial class MainWindow : Window
     {
+        private MainUserInterface mainUserInterface = new MainUserInterface();
+        private UsingAPI usingAPI = new UsingAPI();
+
         public MainWindow()
         {
             InitializeComponent();
+
+            // MainUserInterface 클래스와 연결
+            mainUserInterface.PassMainWindow(this);
+            MainGrid.Children.Add(mainUserInterface);
         }
     }
 }
