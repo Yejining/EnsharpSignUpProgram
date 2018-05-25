@@ -39,15 +39,15 @@
         <Label Name="phone" Grid.Row="2" Grid.Column="1" Content="휴대전화" VerticalContentAlignment="Center" HorizontalContentAlignment="Right"/>
         <Label Name="user_phone" Grid.Row="2" Grid.Column="3" Grid.ColumnSpan="3" VerticalContentAlignment="Center" HorizontalContentAlignment="Left"/>
         <TextBox Name="new_phone" Grid.Row="4" Grid.Column="3" Padding="5,0,5,0" VerticalContentAlignment="Center" HorizontalContentAlignment="Left"/>
-        <Button Name="btn_phone" Grid.Row="4" Grid.Column="5" Content="수정"/>
+        <Button Name="btn_phone" Grid.Row="4" Grid.Column="5" Content="수정" Click="btn_phone_Click"/>
         <Label Name="mail" Grid.Row="6" Grid.Column="1" Content="이메일" VerticalContentAlignment="Center" HorizontalContentAlignment="Right"/>
         <Label Name="user_mail" Grid.Row="6" Grid.ColumnSpan="3" Grid.Column="3" VerticalContentAlignment="Center" HorizontalContentAlignment="Left"/>
         <TextBox Name="new_mail" Grid.Row="8" Grid.Column="3" Padding="5,0,5,0" VerticalContentAlignment="Center" HorizontalContentAlignment="Left"/>
-        <Button Name="btn_mail" Grid.Row="8" Grid.Column="5" Content="수정"/>
+        <Button Name="btn_mail" Grid.Row="8" Grid.Column="5" Content="수정" Click="btn_mail_Click"/>
         <Label Name="address" Grid.Row="10" Grid.Column="1" Content="주소" VerticalContentAlignment="Center" HorizontalContentAlignment="Right"/>
         <Label Name="user_address" Grid.Row="10" Grid.ColumnSpan="3"  Grid.Column="3" VerticalContentAlignment="Center" HorizontalContentAlignment="Left"/>
         <TextBox Name="new_address" Grid.Row="12" Grid.Column="3" Padding="5,0,5,0" VerticalContentAlignment="Center" HorizontalContentAlignment="Left"/>
-        <Button Name="btn_address" Grid.Row="12" Grid.Column="5" Content="수정"/>
+        <Button Name="btn_address" Grid.Row="12" Grid.Column="5" Content="수정" Click="btn_address_Click"/>
         <Label Name="sign_out" Grid.Row="14" Grid.Column="1" Content="탈퇴" VerticalContentAlignment="Center" HorizontalContentAlignment="Right"/>
         <Button Name="btn_out" Grid.Row="14" Grid.Column="5" Content="탈퇴" Click="btn_out_Click"/>
     </Grid>

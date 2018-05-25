@@ -59,7 +59,30 @@ namespace EnSharpSignUpProgram.UI
 
         private void btn_out_Click(object sender, RoutedEventArgs e)
         {
+            Database.DeleteFromDatabase("member", $" WHERE id=\"{userID}\"");
 
+            mainUserInterface.MainGrid.Children.Remove(this);
+            mainUserInterface.MainGrid.Children.Insert(1, home);
+            SetUser("");
+            home.UpdateButtonName(userID);
+        }
+
+        private void btn_phone_Click(object sender, RoutedEventArgs e)
+        {
+            Database.UpdateToDatabase("member", "phone_number", $"\"{new_phone.Text.ToString()}\"", $" WHERE id=\"{userID}\"");
+            SetUserInformation();
+        }
+
+        private void btn_mail_Click(object sender, RoutedEventArgs e)
+        {
+            Database.UpdateToDatabase("member", "mail", $"\"{new_mail.Text.ToString()}\"", $" WHERE id=\"{userID}\"");
+            SetUserInformation();
+        }
+
+        private void btn_address_Click(object sender, RoutedEventArgs e)
+        {
+            Database.UpdateToDatabase("member", "address", $"\"{new_address.Text.ToString()}\"", $" WHERE id=\"{userID}\"");
+            SetUserInformation();
         }
     }
 }
