@@ -26,6 +26,8 @@ namespace EnSharpSignUpProgram.UI
         private TitleBar titleBar = new TitleBar();
         private Home home;
         private LogIn logIn;
+        private SignUp signUp;
+        private UpdateUserInformation updateUserInformation;
 
         public MainUserInterface()
         {
@@ -42,6 +44,12 @@ namespace EnSharpSignUpProgram.UI
             home = new Home(userID);
             MainGrid.Children.Add(home);
             Grid.SetRow(home, 1);
+
+            // SignUp 클래스와 연결
+            signUp = new SignUp(this, home);
+
+            // UpdateUserInformation 클래스와 연결
+            updateUserInformation = new UpdateUserInformation(this, home);
 
             home.first.Click += new RoutedEventHandler(first_Click);
             home.second.Click += new RoutedEventHandler(second_Click);
@@ -67,11 +75,17 @@ namespace EnSharpSignUpProgram.UI
         {
             if (userID.Length == 0)
             {
-
+                MainGrid.Children.Remove(home);
+                MainGrid.Children.Add(signUp);
+                Grid.SetRow(signUp, 1);
             }
             else
             {
-
+                updateUserInformation.SetUser(userID);
+                MainGrid.Children.Remove(home);
+                MainGrid.Children.Add(updateUserInformation);
+                Grid.SetRow(updateUserInformation, 1);
+                updateUserInformation.SetUserInformation();
             }
         }
 

@@ -23,11 +23,15 @@ namespace EnSharpSignUpProgram.UI
     public partial class SignUp : UserControl
     {
         private InputProcessor inputProcessor = new InputProcessor();
+        private MainUserInterface mainUserInterface;
+        private Home home;
         private string name = "";
 
-        public SignUp()
+        public SignUp(MainUserInterface mainUserInterface, Home home)
         {
             InitializeComponent();
+            this.mainUserInterface = mainUserInterface;
+            this.home = home;
         }
 
         public void keyUp(object sender, KeyEventArgs e, int mode)
@@ -93,6 +97,12 @@ namespace EnSharpSignUpProgram.UI
             {
                 name = nameBox.Text;
             }
+        }
+
+        private void back_Click(object sender, RoutedEventArgs e)
+        {
+            mainUserInterface.MainGrid.Children.Remove(this);
+            mainUserInterface.MainGrid.Children.Insert(1, home);
         }
     }
 }

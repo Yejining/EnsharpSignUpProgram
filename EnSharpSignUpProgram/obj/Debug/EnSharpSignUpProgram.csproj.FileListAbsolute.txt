@@ -30,3 +30,5 @@ C:\Users\User\Documents\GitHub\EnSharpSignUpProgram\EnSharpSignUpProgram\obj\Deb
 C:\Users\User\Documents\GitHub\EnSharpSignUpProgram\EnSharpSignUpProgram\obj\Debug\UI\Home.baml
 C:\Users\User\Documents\GitHub\EnSharpSignUpProgram\EnSharpSignUpProgram\obj\Debug\UI\LogIn.g.cs
 C:\Users\User\Documents\GitHub\EnSharpSignUpProgram\EnSharpSignUpProgram\obj\Debug\UI\LogIn.baml
+C:\Users\User\Documents\GitHub\EnSharpSignUpProgram\EnSharpSignUpProgram\obj\Debug\UI\UpdateUserInformation.g.cs
+C:\Users\User\Documents\GitHub\EnSharpSignUpProgram\EnSharpSignUpProgram\obj\Debug\UI\UpdateUserInformation.baml
