@@ -116,7 +116,7 @@ namespace EnSharpSignUpProgram.UI
 
         private void log_in_Click(object sender, RoutedEventArgs e)
         {
-            bool isValid = Database.CheckIDAndPassword(id.Text, userInputPassword);
+            bool isValid = Database.CheckIDAndPassword(id.Text, password.Text);
 
             if (isValid)
             {
@@ -134,6 +134,17 @@ namespace EnSharpSignUpProgram.UI
             {
                 MessageBox.Show(Constant.WRONG_LOG_IN);
             }
+        }
+
+        private void back_Click(object sender, RoutedEventArgs e)
+        {
+            mainUserInterface.UserID = id.Text;
+            mainUserInterface.MainGrid.Children.Remove(this);
+            mainUserInterface.MainGrid.Children.Insert(1, home);
+            home.UpdateButtonName(userID);
+
+            id.Text = "";
+            password.Text = "";
         }
     }
 }

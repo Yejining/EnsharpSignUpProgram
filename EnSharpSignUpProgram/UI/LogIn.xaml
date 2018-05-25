@@ -8,6 +8,7 @@
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
         <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="30"/>
             <RowDefinition Height="5"/>
@@ -21,8 +22,9 @@
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="5"/>
         </Grid.ColumnDefinitions>
-        <TextBox Name="id" Tag="아이디" Grid.Row="1" Grid.Column="1" Padding="5,0,5,0" VerticalContentAlignment="Center" TextWrapping="Wrap"/>
-        <TextBox Name="password" Tag="비밀번호" Grid.Row="3" Grid.Column="1" Padding="5,0,5,0" VerticalContentAlignment="Center" TextWrapping="Wrap"/>
-        <Button Name="log_in" Content="로그인" BorderThickness="0" Background="#2DB400"  Grid.Row="5" Grid.Column="1"/>
+        <Button Name="back" Grid.Row="0" Grid.Column="1" Content="back" Click="back_Click"/>
+        <TextBox Name="id" Tag="아이디" Grid.Row="2" Grid.Column="1" Padding="5,0,5,0" VerticalContentAlignment="Center" TextWrapping="Wrap"/>
+        <TextBox Name="password" Tag="비밀번호" Grid.Row="4" Grid.Column="1" Padding="5,0,5,0" VerticalContentAlignment="Center" TextWrapping="Wrap"/>
+        <Button Name="log_in" Content="로그인" BorderThickness="0" Background="#2DB400"  Grid.Row="6" Grid.Column="1"/>
     </Grid>
 </UserControl>

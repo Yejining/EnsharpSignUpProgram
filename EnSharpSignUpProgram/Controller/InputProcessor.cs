@@ -14,12 +14,12 @@ namespace EnSharpSignUpProgram.Controller
     {
         public void LogInProcess(object sender, KeyEventArgs e, TextBox textBox, int limit)
         {
-            if (textBox.Tag.ToString() == "비밀번호")
-            {
-                textBox.Text = new string('*', textBox.Text.Length);
-                textBox.SelectionStart = textBox.Text.Length;
-                textBox.SelectionLength = 0;
-            }
+            //if (textBox.Tag.ToString() == "비밀번호")
+            //{
+            //    textBox.Text = new string('*', textBox.Text.Length);
+            //    textBox.SelectionStart = textBox.Text.Length;
+            //    textBox.SelectionLength = 0;
+            //}
 
             if (textBox.Text.Length > limit)
             {
