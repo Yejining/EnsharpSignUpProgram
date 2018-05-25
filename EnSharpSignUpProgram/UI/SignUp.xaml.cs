@@ -57,7 +57,7 @@ namespace EnSharpSignUpProgram.UI
             switch (mode)
             {
                 case Constant.NAME:
-                    if (inputProcessor.IsValidName(nameBox))
+                    if (inputProcessor.IsValidName(nameBox, warning))
                     {
                         name = nameBox.Text;
                         idBox.Visibility = Visibility.Visible;
@@ -77,16 +77,6 @@ namespace EnSharpSignUpProgram.UI
         {
             TextBox textBox = (TextBox)sender;
             int mode = Int32.Parse(textBox.Tag.ToString());
-
-            switch (mode)
-            {
-                case Constant.NAME:
-                    nameBox.Text = "";
-                    nameBox.Foreground = new SolidColorBrush(Constant.TEXT_COLOR);
-                    break;
-                case Constant.ID:
-                    break;
-            }
 
             EventManager.RegisterClassHandler(typeof(Window), Keyboard.KeyUpEvent, new KeyEventHandler((object sndr, KeyEventArgs args) => keyUp(sndr, args, mode)), true);
         }

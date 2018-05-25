@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Controls;
 using System.Windows.Media;
+using System.Windows.Input;
 
 using EnSharpSignUpProgram.Data;
 
@@ -11,6 +12,21 @@ namespace EnSharpSignUpProgram.Controller
 {
     class InputProcessor
     {
+        public void LogInProcess(object sender, KeyEventArgs e, TextBox textBox, int limit)
+        {
+            if (textBox.Tag.ToString() == "비밀번호")
+            {
+                textBox.Text = new string('*', textBox.Text.Length);
+                textBox.SelectionStart = textBox.Text.Length;
+                textBox.SelectionLength = 0;
+            }
+
+            if (textBox.Text.Length > limit)
+            {
+                ApplyLimitAndSetCursorEndOfText(textBox);
+            }
+        }
+
         /// <summary>
         /// 사용자의 이름을 입력받는 메소드입니다.
         /// </summary>
@@ -55,24 +71,47 @@ namespace EnSharpSignUpProgram.Controller
         /// </summary>
         /// <param name="textBox">이름 TextBox</param>
         /// <returns>입력 이름 유효 여부</returns>
-        public bool IsValidName(TextBox textBox)
+        public bool IsValidName(TextBox textBox, Label label)
         {
             if (textBox.Text.Length < 3 || textBox.Text.Length > 5)
+            {
+                Warn(label, Constant.ID_ERROR);
                 return false;
+            }
             else if (!IsKorean(textBox.Text, Constant.CHECK))
+            {
+                Warn(label, Constant.ID_ERROR);
                 return false;
+            }
             else
+            {
+                label.Visibility = System.Windows.Visibility.Hidden;
                 return true;
+            }
         }
 
-        public bool IsValidID(TextBox textBox)
+        public bool IsValidID(TextBox textBox, Label label)
         {
             if (textBox.Text.Length < 6 || textBox.Text.Length > 20)
+            {
+                Warn(label, Constant.ID_ERROR);
                 return false;
+            }
             else if (!IsEnglishOrNumber(textBox.Text))
+            {
+                Warn(label, Constant.ID_ERROR);
                 return false;
+            }
+            else if (Database.GetCountFromDatabase("member", $" WHERE id=\"{textBox.Text}\"") != 0)
+            {
+                Warn(label, "이미 사용중이거나 탈퇴한 아이디입니다.");
+                return false;
+            }
             else
+            {
+                label.Visibility = System.Windows.Visibility.Hidden;
                 return true;
+            }
         }
 
         /// <summary>

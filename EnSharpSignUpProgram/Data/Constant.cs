@@ -18,8 +18,14 @@ namespace EnSharpSignUpProgram.Data
         public const string EMPTY_INPUT_ERROR = "필수항목입니다";
         public const string NAME_ERROR = "이름은 3-5자 한글만 사용 가능합니다.";
         public const string ID_ERROR = "ID는 5-20글자의 영문 소문자, 숫자만 사용 가능합니다.";
-        
+
+        public const string WRONG_LOG_IN = "아이디 또는 비밀번호를 다시 확인하세요.\n등록되지 않은 아이디이거나, 아이디 또는 비밀번호를 잘못 입력하셨습니다.";
+
+
         public static int[] INPUT_LIMIT = { 5, 20, 16};
+
+        public const int ID_LIMIT = 20;
+        public const int PASSWORD_LIMIT = 16;
         
         public const int NAME = 0;
         public const int ID = 1;

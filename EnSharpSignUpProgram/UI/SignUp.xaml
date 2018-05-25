@@ -33,10 +33,10 @@
             <RowDefinition Height="15"/>
             <RowDefinition Height="50"/>
         </Grid.RowDefinitions>
-        <TextBox Name="nameBox" Tag="0" Text="이름" Foreground="Gray" Grid.Row="2" Grid.Column="1" TextWrapping="Wrap" Padding="5,0,5,0" VerticalContentAlignment="Center" GotFocus="name_GotFocus" LostFocus="name_LostFocus"/>
+        <TextBox Name="nameBox" Tag="0" Foreground="Gray" Grid.Row="2" Grid.Column="1" TextWrapping="Wrap" Padding="5,0,5,0" VerticalContentAlignment="Center" GotFocus="name_GotFocus" LostFocus="name_LostFocus"/>
         <Label Name="warning" Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="3"/>
         <TextBox Name="idBox" Tag="1" Text="ID" Foreground="Gray" Grid.Row="2" Grid.Column="3" TextWrapping="Wrap" Padding="5,0,5,0" VerticalContentAlignment="Center" Visibility="Hidden" GotFocus="name_GotFocus"/>
-        <TextBox Name="passwordBox" Text="암호" Foreground="Gray" Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="3" TextWrapping="Wrap" Padding="5,0,5,0" VerticalContentAlignment="Center" Visibility="Hidden"/>
+        <TextBox Name="passwordBox" Foreground="Gray" Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="3" TextWrapping="Wrap" Padding="5,0,5,0" VerticalContentAlignment="Center" Visibility="Hidden"/>
         
 
     </Grid>

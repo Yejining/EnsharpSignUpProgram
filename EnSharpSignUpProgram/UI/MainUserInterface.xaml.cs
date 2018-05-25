@@ -21,29 +21,69 @@ namespace EnSharpSignUpProgram.UI
     /// </summary>
     public partial class MainUserInterface : UserControl
     {
+        private string userID = "";
         private MainWindow mainWindow;
         private TitleBar titleBar = new TitleBar();
-        private SignUp signUp = new SignUp();
+        private Home home;
+        private LogIn logIn;
 
         public MainUserInterface()
         {
             InitializeComponent();
 
             Database.ConnectToMySQL();
+            logIn = new LogIn(userID);
 
-            // MainUserInterface 클래스와 연결
+            // titleBar 클래스와 연결
             MainGrid.Children.Add(titleBar);
             Grid.SetRow(titleBar, 0);
 
-            // MainUserInterface 클래스와 연결
-            MainGrid.Children.Add(signUp);
-            Grid.SetRow(signUp, 1);
+            // Home 클래스와 연결
+            home = new Home(userID);
+            MainGrid.Children.Add(home);
+            Grid.SetRow(home, 1);
+
+            home.first.Click += new RoutedEventHandler(first_Click);
+            home.second.Click += new RoutedEventHandler(second_Click);
+        }
+
+        private void first_Click(object sender, RoutedEventArgs e)
+        {
+            if (userID.Length == 0)
+            {
+                MainGrid.Children.Remove(home);
+                MainGrid.Children.Add(logIn);
+                Grid.SetRow(logIn, 1);
+                logIn.In(this, home);
+            }
+            else
+            {
+                userID = "";
+                home.UpdateButtonName(userID);
+            }
+        }
+
+        private void second_Click(object sender, RoutedEventArgs e)
+        {
+            if (userID.Length == 0)
+            {
+
+            }
+            else
+            {
+
+            }
         }
 
         public void PassMainWindow(MainWindow mainWindow)
         {
             this.mainWindow = mainWindow;
             titleBar.PassMainWindow(mainWindow);
+        }
+
+        public string UserID
+        {
+            set { userID = value; }
         }
     }
 }

@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\User\Documents\GitHub\EnSharpSignUpProgram\EnSharpSignUpProgram\App.xaml
-4201576000
+6-1439400522
 
-16-191301912
+18877609324
 26-1733884903
-MainWindow.xaml;UI\MainUserInterface.xaml;UI\SignUp.xaml;UI\TitleBar.xaml;
+MainWindow.xaml;UI\Home.xaml;UI\LogIn.xaml;UI\MainUserInterface.xaml;UI\SignUp.xaml;UI\TitleBar.xaml;
 
-True
+False
 

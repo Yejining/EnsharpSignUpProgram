@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using MySql.Data.MySqlClient;
+using System.Windows;
+using System.Windows.Controls;
 
 namespace EnSharpSignUpProgram.Data
 {
@@ -129,6 +131,16 @@ namespace EnSharpSignUpProgram.Data
             string sql = "UPDATE " + table + " SET " + column + "=" + data + conditionalExpression + ";";
 
             MakeCommand(sql);
+        }
+
+        public static bool CheckIDAndPassword(string id, string password)
+        {
+            int isValidate = GetCountFromDatabase("member", $" WHERE id=\"{id}\" AND password=\"{password}\"");
+
+            if (isValidate == 1)
+                return true;
+            else
+                return false;
         }
     }
 }
